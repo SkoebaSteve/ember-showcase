@@ -1,0 +1,13 @@
+{{page-title "Concurrency"}}
+<button {{on "click" this.toggleButtons}}>Toggle component</button>
+
+<p>Controller counter is now: {{this.counter.counter}}</p>
+
+{{#if this.showButtons}}
+  <CounterButtons
+    @countToTenTask={{this.countToTenTask}}
+    @countToTenCurried={{perform this.countToTenTask}}
+    @countToTenAction={{this.countToTenAction}}
+  />
+{{/if}}
+

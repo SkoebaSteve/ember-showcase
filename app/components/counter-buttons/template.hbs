@@ -1,0 +1,14 @@
+<h2>buttons to call the task/actions from controller</h2>
+{{!-- cancelled ones --}}
+<button {{on "click" (perform this.countToTenWrapperTask)}}>Perform countToTenWrapperTask</button>
+{{!-- not cancelled ones --}}
+<button {{on "click" (perform this.countToTenActionWrappedIntoTask)}}>Perform countToTenAction wrapped into task</button>
+<button {{on "click" this.countToTenTaskWrappedIntoAction}}>Perform countToTenTask wrapped into action</button>
+<button {{on "click" (perform @countToTenTask)}}>Perform countToTenTask</button>
+<button {{on "click" @countToTenCurried}}>Call the curried task</button>
+<button {{on "click" @countToTenAction}}>Call the action</button>
+
+<h2>buttons to call the task/actions from component</h2>
+<button {{on "click" (perform this.countToTenTask)}}>Perform countToTenTask</button>
+<button {{on "click" (perform this.countToTenLocalWrapperTask)}}>Perform locally wrapped countToTenTask</button>
+<button {{on "click" this.countToTenAction}}>Perform countToTenAction</button>
