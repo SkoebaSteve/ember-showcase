@@ -12,3 +12,9 @@
 <button {{on "click" (perform this.countToTenTask)}}>Perform countToTenTask</button>
 <button {{on "click" (perform this.countToTenLocalWrapperTask)}}>Perform locally wrapped countToTenTask</button>
 <button {{on "click" this.countToTenAction}}>Perform countToTenAction</button>
+
+<br /><br />
+<button {{on "click" this.toggleButtons}}>Toggle component</button>
+{{#if this.showButtons}}
+  <CounterButtons::Nested @countToTenTask={{this.countToTenTask}} />
+{{/if}}

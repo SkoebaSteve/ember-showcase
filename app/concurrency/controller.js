@@ -33,4 +33,8 @@ export default class ConcurrencyController extends Controller {
   @action toggleButtons() {
     this.showButtons = !this.showButtons;
   }
+
+  deactivate() {
+    this.countToTenTask.cancelAll();
+  }
 }

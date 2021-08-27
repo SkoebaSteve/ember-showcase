@@ -2,9 +2,10 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { dropTask, task, timeout } from 'ember-concurrency';
 import { inject as service } from '@ember/service';
-
+import { tracked } from '@glimmer/tracking';
 export default class extends Component {
   @service counter;
+  @tracked showButtons = true;
 
   // local tasks/actions
   @task *countToTenTask() {
@@ -42,5 +43,9 @@ export default class extends Component {
 
   @action countToTenTaskWrappedIntoAction() {
     this.args.countToTenTask.perform();
+  }
+
+  @action toggleButtons() {
+    this.showButtons = !this.showButtons;
   }
 }
