@@ -2,19 +2,19 @@
   <section local-class="section">
     <h2>buttons to call the task/actions from controller</h2>
     {{!-- cancelled ones --}}
-    <button local-class="run" {{on "click" (perform this.countToTenWrapperTask)}}>Perform countToTenWrapperTask</button>
+    <button local-class="run" {{on "click" (perform this.countToTenWrapperTask)}}>Run the incoming task wrapped into a local task</button>
     {{!-- not cancelled ones --}}
-    <button local-class="run" {{on "click" (perform this.countToTenActionWrappedIntoTask)}}>Perform countToTenAction wrapped into task</button>
-    <button local-class="run" {{on "click" this.countToTenTaskWrappedIntoAction}}>Perform countToTenTask wrapped into action</button>
-    <button local-class="run" {{on "click" (perform @countToTenTask)}}>Perform countToTenTask</button>
-    <button local-class="run" {{on "click" @countToTenCurried}}>Call the curried task</button>
-    <button local-class="run" {{on "click" @countToTenAction}}>Call the action</button>
+    <button local-class="run" {{on "click" (perform this.countToTenActionWrappedIntoTask)}}>Run the incoming action wrapped into a local task</button>
+    <button local-class="run" {{on "click" this.countToTenTaskWrappedIntoAction}}>Run the incoming task wrapped into an action</button>
+    <button local-class="run" {{on "click" (perform @countToTenTask)}}>Perform the incoming task via the perform helper</button>
+    <button local-class="run" {{on "click" @countToTenCurried}}>Call directly the curried task</button>
+    <button local-class="run" {{on "click" @countToTenAction}}>Call directly the incoming action</button>
 
     <div local-class="section from-component">
       <h2>buttons to call the task/actions from component</h2>
-      <button local-class="run" {{on "click" (perform this.countToTenTask)}}>Perform countToTenTask</button>
-      <button local-class="run" {{on "click" (perform this.countToTenLocalWrapperTask)}}>Perform locally wrapped countToTenTask</button>
-      <button local-class="run" {{on "click" this.countToTenAction}}>Perform countToTenAction</button>
+      <button local-class="run" {{on "click" (perform this.countToTenTask)}}>Run the local countToTenTask via the perform helper</button>
+      <button local-class="run" {{on "click" (perform this.countToTenLocalWrapperTask)}}>Run the local countToTenTask wrapped into another task</button>
+      <button local-class="run" {{on "click" this.countToTenAction}}>Run the local action</button>
       <p>
         <button local-class="run" {{on "click" this.toggleButtons}}>Toggle nested component</button>
       </p>

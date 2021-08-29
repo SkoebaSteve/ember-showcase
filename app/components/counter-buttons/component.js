@@ -37,8 +37,12 @@ export default class extends Component {
     yield this.args.countToTenTask.perform();
   }
 
-  @action countToTenTaskWrappedIntoAction() {
-    this.args.countToTenTask.perform();
+  @dropTask *countToTenActionWrappedIntoTask() {
+    yield this.args.countToTenAction();
+  }
+
+  @action async countToTenTaskWrappedIntoAction() {
+    await this.args.countToTenTask.perform();
   }
 
   @action toggleButtons() {
