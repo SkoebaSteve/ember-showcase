@@ -37,10 +37,6 @@ export default class extends Component {
     yield this.args.countToTenTask.perform();
   }
 
-  @dropTask *countToTenActionWrappedIntoTask() {
-    yield this.args.countToTenAction();
-  }
-
   @action countToTenTaskWrappedIntoAction() {
     this.args.countToTenTask.perform();
   }

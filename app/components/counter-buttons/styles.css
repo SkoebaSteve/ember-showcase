@@ -1,0 +1,25 @@
+.counter-buttons {
+  background-color: lightblue;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0 20px 40px;
+}
+
+.run {
+  border: 1px solid;
+  border-radius: 6px;
+  margin-bottom: 4px;
+  padding: 4px;
+  text-align: left;
+}
+
+.from-component {
+  background-color: #25738c;
+}
+
+.nested-component {
+  background-color: #2a5aa9;
+}

@@ -1,20 +1,31 @@
-<h2>buttons to call the task/actions from controller</h2>
-{{!-- cancelled ones --}}
-<button {{on "click" (perform this.countToTenWrapperTask)}}>Perform countToTenWrapperTask</button>
-{{!-- not cancelled ones --}}
-<button {{on "click" (perform this.countToTenActionWrappedIntoTask)}}>Perform countToTenAction wrapped into task</button>
-<button {{on "click" this.countToTenTaskWrappedIntoAction}}>Perform countToTenTask wrapped into action</button>
-<button {{on "click" (perform @countToTenTask)}}>Perform countToTenTask</button>
-<button {{on "click" @countToTenCurried}}>Call the curried task</button>
-<button {{on "click" @countToTenAction}}>Call the action</button>
+<article local-class="counter-buttons">
+  <section local-class="section">
+    <h2>buttons to call the task/actions from controller</h2>
+    {{!-- cancelled ones --}}
+    <button local-class="run" {{on "click" (perform this.countToTenWrapperTask)}}>Perform countToTenWrapperTask</button>
+    {{!-- not cancelled ones --}}
+    <button local-class="run" {{on "click" (perform this.countToTenActionWrappedIntoTask)}}>Perform countToTenAction wrapped into task</button>
+    <button local-class="run" {{on "click" this.countToTenTaskWrappedIntoAction}}>Perform countToTenTask wrapped into action</button>
+    <button local-class="run" {{on "click" (perform @countToTenTask)}}>Perform countToTenTask</button>
+    <button local-class="run" {{on "click" @countToTenCurried}}>Call the curried task</button>
+    <button local-class="run" {{on "click" @countToTenAction}}>Call the action</button>
 
-<h2>buttons to call the task/actions from component</h2>
-<button {{on "click" (perform this.countToTenTask)}}>Perform countToTenTask</button>
-<button {{on "click" (perform this.countToTenLocalWrapperTask)}}>Perform locally wrapped countToTenTask</button>
-<button {{on "click" this.countToTenAction}}>Perform countToTenAction</button>
+    <div local-class="section from-component">
+      <h2>buttons to call the task/actions from component</h2>
+      <button local-class="run" {{on "click" (perform this.countToTenTask)}}>Perform countToTenTask</button>
+      <button local-class="run" {{on "click" (perform this.countToTenLocalWrapperTask)}}>Perform locally wrapped countToTenTask</button>
+      <button local-class="run" {{on "click" this.countToTenAction}}>Perform countToTenAction</button>
+      <p>
+        <button local-class="run" {{on "click" this.toggleButtons}}>Toggle nested component</button>
+      </p>
 
-<br /><br />
-<button {{on "click" this.toggleButtons}}>Toggle component</button>
-{{#if this.showButtons}}
-  <CounterButtons::Nested @countToTenTask={{this.countToTenTask}} />
-{{/if}}
+      <div local-class="section nested-component">
+        {{#if this.showButtons}}
+          <CounterButtons::Nested @countToTenTask={{this.countToTenTask}} />
+        {{/if}}
+      </div>
+
+    </div>
+
+  </section>
+</article>
